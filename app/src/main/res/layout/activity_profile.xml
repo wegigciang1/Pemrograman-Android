@@ -8,12 +8,9 @@
     android:gravity="center"
     tools:context=".ProfileActivity">
 
-    <TextView
+    <FrameLayout
+        android:id="@+id/fragment_holder"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="@string/konichiwa_sekai"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>
