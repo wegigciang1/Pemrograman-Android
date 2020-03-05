@@ -1,4 +1,10 @@
 <resources>
-    <string name="app_name">HelloWorld</string>
-    <string name="konichiwa_sekai">KONICHIWA SEKAI</string>
+    <string name="app_name">MiripWhatsApp</string>
+    <string name="tab_text_1">Profile</string>
+    <string name="tab_text_2">Status</string>
+    <string name="tab_text_3">Panggilan</string>
+    <string name="content_tab_profile">Welcome Home</string>
+    <string name="content_tab_status">Change your Profile here</string>
+    <string name="content_tab_text">This is Tab</string>
+    <string name="content_tab_home">Welcome Home</string>
 </resources>
