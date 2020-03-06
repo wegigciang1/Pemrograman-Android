@@ -31,13 +31,13 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         Fragment fragment = null;
         switch (position) {
             case 0:
-                fragment = new com.dicoding.tablayout.FragmentProfile();
+                fragment = new FragmentProfile();
                 break;
             case 1:
-                fragment = new com.dicoding.tablayout.FragmentStatus();
+                fragment = new FragmentStatus();
                 break;
             case 2:
-                fragment = new com.dicoding.tablayout.FragmentPanggilan();
+                fragment = new FragmentPanggilan();
                 break;
         }
         return fragment;
