@@ -15,6 +15,13 @@
         android:text="Test gan"
         tools:text="Test" />
 
+    <Button
+        android:id="@+id/logOutMain"
+        android:layout_width="wrap_content"
+        android:layout_height="63dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="100dp"
+        android:text="Log Out" />
 
 
 </FrameLayout>
