@@ -40,6 +40,7 @@ public class FragmentProfile extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         //kenalin button dari xml
         Button logOut = (Button) view.findViewById(R.id.logOutMain);
         logOut.setOnClickListener(new View.OnClickListener() {
