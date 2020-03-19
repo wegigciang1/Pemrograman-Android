@@ -1,6 +1,5 @@
-#Android Pertemuan 5
+#Android Pertemuan 6
 Penambahan Fitur
--Sign In
--Database Firebase
--Login dengan Get data dari SQL lite
--Shared Preference, agar tidak keluar sebelum logout
+-Tambah Class Wifi Check
+-Menambah Sedikit Kodingan di Profile Activity
+-Notifikasi(Perlu Login Untuk Mengaktifkan Notifikasi)
