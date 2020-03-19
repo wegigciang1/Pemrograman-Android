@@ -1,18 +1,33 @@
 package com.example.helloworld;
 
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.Objects;
+
+import static com.example.helloworld.WifiCheck.offWiFi;
+import static com.example.helloworld.WifiCheck.onWiFi;
+
 public class ProfileActivity extends AppCompatActivity {
 
-
+    private View view;
+    private NotificationManagerCompat notificationManagerCompat;
+    private static final String TAG = "Activities";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,13 +39,59 @@ public class ProfileActivity extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
-        getSupportActionBar().setElevation(0);
-//p6
-        Bundle extras = getIntent().getExtras();
-        if(extras!=null){
-            Log.i("TAG", "OnCreate on MainActivity"
-                            + extras.getString("KEY"));
+        Objects.requireNonNull(getSupportActionBar()).setElevation(0);
+
+        notificationManagerCompat = NotificationManagerCompat.from(this);
+    }
+
+    //wifi
+    private BroadcastReceiver receiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            int wifiState = intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE, WifiManager.WIFI_STATE_UNKNOWN);
+            if (wifiState == WifiManager.WIFI_STATE_ENABLED) {
+                wifiOn(view);
+            }
+            else if (wifiState == WifiManager.WIFI_STATE_DISABLED) {
+                wifiOff(view);
+            }
         }
-        //p6
+    };
+
+    protected void onStart() {
+        super.onStart();
+        registerReceiver(receiver, new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION));
+    }
+
+    protected void onStop() {
+        super.onStop();
+        unregisterReceiver(receiver);
+    }
+
+    public void wifiOn(View view){
+        String title = "Notifikasi";
+        String message = "WiFi Menyala";
+        android.app.Notification notification = new NotificationCompat.Builder(this,onWiFi)
+                .setSmallIcon(R.drawable.ic_wifi_black)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .setContentTitle(title)
+                .setContentText(message)
+                .build();
+
+        notificationManagerCompat.notify(1,notification);
+    }
+
+    public void wifiOff(View view){
+        String title = "Notifikasi";
+        String message = "Yah.. Wifinya Mati";
+        android.app.Notification notification = new NotificationCompat.Builder(this,offWiFi)
+                .setSmallIcon(R.drawable.ic_wifi_black)
+                .setPriority(NotificationCompat.PRIORITY_LOW)
+                .setContentTitle(title)
+                .setContentText(message)
+                .build();
+
+        notificationManagerCompat.notify(2,notification);
     }
 }
