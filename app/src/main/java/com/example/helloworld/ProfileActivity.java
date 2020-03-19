@@ -12,21 +12,10 @@ import com.google.android.material.tabs.TabLayout;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    public SharedPreferences pref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //
-        pref= getApplicationContext().getSharedPreferences("Mypref", MODE_PRIVATE);
-        SharedPreferences.Editor editor= pref.edit();
-
-
-        editor.putString("KEY1", "Test Shared References");
-        editor.commit();
-
-        Log.i("Shared Prefed Preferenced", pref.getString("KEY1", null)); //mirip system println
-        editor.remove("KEY1");
-        editor.commit();
 
         setContentView(R.layout.activity_profile);
 
@@ -35,7 +24,13 @@ public class ProfileActivity extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
-
         getSupportActionBar().setElevation(0);
+//p6
+        Bundle extras = getIntent().getExtras();
+        if(extras!=null){
+            Log.i("TAG", "OnCreate on MainActivity"
+                            + extras.getString("KEY"));
+        }
+        //p6
     }
 }

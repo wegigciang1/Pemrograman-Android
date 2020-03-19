@@ -2,6 +2,7 @@ package com.example.helloworld;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -42,7 +43,21 @@ public class MainActivity extends AppCompatActivity {
                 Boolean Checkmailpass= db.emailPass(emailData,passwordData);
                 if(Checkmailpass==true) {
                     Toast.makeText(getApplicationContext(), "Login Berhasil", Toast.LENGTH_SHORT).show();
+
+                    //pertemeuan 6
+                    //broadcester();
+
+                    //Bundle extras= new Bundle();
+                    //extras.putString("KEY", "test");
+
+                    //
+
                     Intent gotoprofile = new Intent(getApplicationContext(), ProfileActivity.class);
+
+                    //Pertemuan 6
+                    //gotoprofile.putExtras(extras);
+                    //
+
                     startActivity(gotoprofile);
 
                     SharedPreferences preference = getSharedPreferences("masuk",MODE_PRIVATE);
@@ -64,5 +79,29 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(gotoprofile);
             }
         });
+
+
     }
+
+/*    //Pertemuan 6 New
+   // private void broadcester() {
+        //create intent broadcast
+        //untuk mengirim sesuatu, bukan untk mengirim data
+     //   Intent broadcastIntent= new Intent("MY_ACTION");
+
+     //   broadcastIntent.setComponent(new ComponentName(getPackageName(),
+       //         "com.example.helloworld.MyBroadcastReciver"));
+
+        //send broadcast
+       // getApplicationContext().sendBroadcast(broadcastIntent);
+  //  }
+
+    //protected void onResume(){
+      //  super.onResume();
+       // registerReceiver();
+    //}
+
+    //pertemuan 6
+
+ */
 }
