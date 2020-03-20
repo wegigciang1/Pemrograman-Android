@@ -94,4 +94,6 @@ public class ProfileActivity extends AppCompatActivity {
 
         notificationManagerCompat.notify(2,notification);
     }
+
+
 }
