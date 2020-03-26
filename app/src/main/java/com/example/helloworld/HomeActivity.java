@@ -5,10 +5,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +21,7 @@ import java.util.Objects;
 import static com.example.helloworld.WifiCheck.offWiFi;
 import static com.example.helloworld.WifiCheck.onWiFi;
 
-public class ProfileActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     private View view;
     private NotificationManagerCompat notificationManagerCompat;
@@ -32,7 +30,7 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_home);
 
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
         ViewPager viewPager = findViewById(R.id.view_pager);

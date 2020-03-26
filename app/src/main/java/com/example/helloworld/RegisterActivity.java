@@ -43,7 +43,7 @@ public class RegisterActivity extends AppCompatActivity {
                             if(insert==true){
                                 Toast.makeText(getApplicationContext(),"Akun Berhasil Dibuat", Toast.LENGTH_SHORT).show();
                                 //lempar ke main kalo berhasil buat akun
-                                Intent gotoprofile = new Intent(getApplicationContext(), MainActivity.class);
+                                Intent gotoprofile = new Intent(getApplicationContext(), LoginActivity.class);
                                 startActivity(gotoprofile);
                             }
                         }

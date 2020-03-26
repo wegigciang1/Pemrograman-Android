@@ -1,10 +1,26 @@
 <resources>
-    <string name="app_name">MiripWhatsApp</string>
-    <string name="tab_text_1">Profile</string>
-    <string name="tab_text_2">Status</string>
-    <string name="tab_text_3">Panggilan</string>
+    <string name="app_name">Android</string>
+    <string name="not_a_member">Not a Member?</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="confirm_pass">Confirm Password</string>
+    <string name="username">Username</string>
+    <string name="registrasi_akun">Registrasi Akun</string>
+    <string name="buat_akun">Buat Akun</string>
+    <string name="tab_text_1">Job Service</string>
+    <string name="tab_text_2">Movie</string>
+    <string name="tab_text_3">Kosong</string>
+
     <string name="content_tab_profile">Welcome Home</string>
     <string name="content_tab_status">Change your Profile here</string>
-    <string name="content_tab_text">This is Tab</string>
+    <string name="content_tab_text">Comming Soon</string>
     <string name="content_tab_home">Welcome Home</string>
+
+    <string name="btn_login">Login</string>
+
+    <string name="films_name">Nama Film</string>
+    <string name="detail">Detail</string>
+    <string name="favorite">Favorite</string>
+    <string name="share">Sinopsis</string>
 </resources>

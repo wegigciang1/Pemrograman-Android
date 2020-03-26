@@ -2,14 +2,11 @@ package com.example.helloworld;
 
 import android.content.Context;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-
-import com.example.helloworld.R;
 
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
@@ -31,13 +28,13 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         Fragment fragment = null;
         switch (position) {
             case 0:
-                fragment = new FragmentProfile();
+                fragment = new FragmentJobService();
                 break;
             case 1:
-                fragment = new FragmentStatus();
+                fragment = new FragmentMovie();
                 break;
             case 2:
-                fragment = new FragmentPanggilan();
+                fragment = new FragmentKosong();
                 break;
         }
         return fragment;

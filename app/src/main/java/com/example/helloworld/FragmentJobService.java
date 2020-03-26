@@ -18,20 +18,17 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.helloworld.R;
-
 import static android.content.Context.JOB_SCHEDULER_SERVICE;
-import static android.content.Context.MODE_PRIVATE;
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentProfile extends Fragment {
+public class FragmentJobService extends Fragment {
 
 
-    public FragmentProfile() {
+    public FragmentJobService() {
         // Required empty public constructor
     }
 
@@ -41,7 +38,7 @@ public class FragmentProfile extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        return inflater.inflate(R.layout.fragment_fragment_profile, container, false);
+        return inflater.inflate(R.layout.fragment_fragment_job_service, container, false);
     }
 
     @Override
@@ -49,7 +46,7 @@ public class FragmentProfile extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         //kenalin button dari xml
-        Button logOut = (Button) view.findViewById(R.id.logOutMain);
+        Button logOut = view.findViewById(R.id.logOutMain);
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,14 +56,14 @@ public class FragmentProfile extends Fragment {
                 SharedPreferences.Editor editor = preference.edit();
                 editor.putString("ingat", "false");
                 editor.apply();
-                Intent gotoprofile = new Intent(getActivity(), MainActivity.class);
+                Intent gotoprofile = new Intent(getActivity(), LoginActivity.class);
                 startActivity(gotoprofile);
             }
         });
 
         //button Start and Canceled Job
-        Button btnStartJob = (Button) view.findViewById(R.id.StartJob);
-        Button btnCancelJob = (Button) view.findViewById(R.id.CancelJob);
+        Button btnStartJob = view.findViewById(R.id.StartJob);
+        Button btnCancelJob = view.findViewById(R.id.CancelJob);
         //button start jalankan perintah
         btnStartJob.setOnClickListener(new View.OnClickListener() {
             @Override

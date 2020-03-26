@@ -2,17 +2,17 @@ package com.example.helloworld;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ComponentName;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     EditText email,password;
     TextView signUp;
@@ -24,11 +24,13 @@ public class MainActivity extends AppCompatActivity {
         String cek = preferences.getString("ingat","");
 
         if(cek.equals("true")){
-            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
             startActivity(intent);
         }
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
+        ImageView myimageView = findViewById(R.id.gambarLogin);
+        myimageView.setImageResource(R.drawable.gambar_login);
         db = new DatabaseHelper(this);
         buttonLogin= findViewById(R.id.btnlogin);
         email = findViewById(R.id.email);
@@ -41,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 String emailData = email.getText().toString();
                 String passwordData = password.getText().toString();
                 Boolean Checkmailpass= db.emailPass(emailData,passwordData);
-                if(Checkmailpass==true) {
+                if(Checkmailpass) {
                     Toast.makeText(getApplicationContext(), "Login Berhasil", Toast.LENGTH_SHORT).show();
 
                     //pertemeuan 6
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
                     //
 
-                    Intent gotoprofile = new Intent(getApplicationContext(), ProfileActivity.class);
+                    Intent gotoprofile = new Intent(getApplicationContext(), HomeActivity.class);
 
                     //Pertemuan 6
                     //gotoprofile.putExtras(extras);

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
-    <color name="background">#008080</color>
+    <color name="colorPrimary">#93cdd1</color>
+    <color name="colorPrimaryDark">#3C898D</color>
+    <color name="colorAccent">#F4CBD1</color>
 
+    <color name="background">#d598a0</color>
+    <color name="colorButton">#5d61a2</color>
+
+    <color name="buttonKhusus">#fc627c</color>
+    <color name="textColorWhite">#FFFFFF</color>
 </resources>
