@@ -46,7 +46,7 @@ public class MyJobService extends JobService {
                     mHandler.post(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(getApplicationContext(), "Run: "+ String.valueOf(finalI), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Run: "+ finalI, Toast.LENGTH_SHORT).show();
                             Log.i(TAG, "handle run: "+finalI);
                         }
                     });

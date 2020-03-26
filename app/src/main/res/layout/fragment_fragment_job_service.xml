@@ -4,32 +4,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context=".FragmentProfile">
+    tools:context=".FragmentJobService">
 
 
     <Button
         android:id="@+id/logOutMain"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="250dp"
         android:layout_marginTop="500dp"
+        android:backgroundTint="@color/buttonKhusus"
+        android:textColor="@color/textColorWhite"
         android:text="Log Out" />
 
     <Button
         android:id="@+id/CancelJob"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginLeft="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="190dp"
         android:layout_marginTop="300dp"
+        android:backgroundTint="@color/buttonKhusus"
+        android:textColor="@color/textColorWhite"
         android:text="CancelJob"
         />
 
     <Button
         android:id="@+id/StartJob"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginLeft="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
         android:layout_marginTop="300dp"
+        android:backgroundTint="@color/buttonKhusus"
+        android:textColor="@color/textColorWhite"
         android:text="StartJob" />
 
 
