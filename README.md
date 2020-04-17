@@ -1,4 +1,14 @@
-#Android Pertemuan 7
+#Android Pertemuan 8 Tugas
+Penambahan Fitur, Tambahan Fitur di Fragment Kosong
+Insert, Update, Delete
+
+
+
+
+
+
+
+P7
 Penambahan Fitur
 -Penyesuaian Fragment
 -Penambahan beberapa class baru
