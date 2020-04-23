@@ -1,7 +1,6 @@
 package com.example.helloworld;
 
 
-
 public class Mahasiswa {
 
     private String nim;

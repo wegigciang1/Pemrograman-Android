@@ -23,6 +23,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         mContext = context;
     }
+
     @Override
     public Fragment getItem(int position) {
         Fragment fragment = null;
@@ -39,11 +40,13 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         }
         return fragment;
     }
+
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
         return mContext.getResources().getString(TAB_TITLES[position]);
     }
+
     @Override
     public int getCount() {
         return 3;

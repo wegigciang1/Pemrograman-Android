@@ -4,19 +4,18 @@ package com.example.helloworld;
 import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
 import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import static android.content.Context.JOB_SCHEDULER_SERVICE;
 import static androidx.constraintlayout.widget.Constraints.TAG;
@@ -33,6 +32,7 @@ public class FragmentJobService extends Fragment {
     }
 
     View view;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,12 +51,15 @@ public class FragmentJobService extends Fragment {
             @Override
             public void onClick(View v) {
 
-                SharedPreferences preference = getActivity().getSharedPreferences("masuk", Context.MODE_PRIVATE);
+                //SharedPreferences preference = getActivity().getSharedPreferences("masuk", Context.MODE_PRIVATE);
                 //SharedPreferences preference = getSharedPreferences("masuk", MODE_PRIVATE);
-                SharedPreferences.Editor editor = preference.edit();
-                editor.putString("ingat", "false");
-                editor.apply();
+                // SharedPreferences.Editor editor = preference.edit();
+                //editor.putString("ingat", "false");
+                //editor.apply();
+                FirebaseAuth.getInstance().signOut();
                 Intent gotoprofile = new Intent(getActivity(), LoginActivity.class);
+                //agar tidak bisa back dengan back button
+                getActivity().finish();
                 startActivity(gotoprofile);
             }
         });
@@ -69,39 +72,35 @@ public class FragmentJobService extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity().getApplicationContext(), "On StartJOB", Toast.LENGTH_SHORT).show();
-                    ComponentName componentName = new ComponentName(getActivity(), MyJobService.class);
-                    JobInfo info = new JobInfo.Builder(123, componentName)
-                            .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED)
-                            .setPersisted(true)
-                            .setPeriodic(15 * 60 * 1000) //dilakukan setiap 15 menit
-                            .build();
+                ComponentName componentName = new ComponentName(getActivity(), MyJobService.class);
+                JobInfo info = new JobInfo.Builder(123, componentName)
+                        .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED)
+                        .setPersisted(true)
+                        .setPeriodic(15 * 60 * 1000) //dilakukan setiap 15 menit
+                        .build();
 
-                    JobScheduler scheduler = (JobScheduler) getActivity().getSystemService(JOB_SCHEDULER_SERVICE);
-                    int resultCode = scheduler.schedule(info);
-                    if(resultCode == JobScheduler.RESULT_SUCCESS){
-                        Log.i(TAG, "scheduleJob: Job Scheduled");
-                    }else {
-                        Log.i(TAG, "scheduleJob: Job Scheduling failed");
-                    }
+                JobScheduler scheduler = (JobScheduler) getActivity().getSystemService(JOB_SCHEDULER_SERVICE);
+                int resultCode = scheduler.schedule(info);
+                if (resultCode == JobScheduler.RESULT_SUCCESS) {
+                    Log.i(TAG, "scheduleJob: Job Scheduled");
+                } else {
+                    Log.i(TAG, "scheduleJob: Job Scheduling failed");
+                }
             }
         });
 
-    //button cancel jalankan perintah
-    btnCancelJob.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
+        //button cancel jalankan perintah
+        btnCancelJob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
                 JobScheduler scheduler = (JobScheduler) getActivity().getSystemService(JOB_SCHEDULER_SERVICE);
                 scheduler.cancel(123);
-                Log.i(TAG,"cancelJob");
+                Log.i(TAG, "cancelJob");
 
-        }
-    });
+            }
+        });
     }
-
-
-
-
 
 
 }

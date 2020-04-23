@@ -26,6 +26,7 @@ public class HomeActivity extends AppCompatActivity {
     private View view;
     private NotificationManagerCompat notificationManagerCompat;
     private static final String TAG = "Activities";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,8 +50,7 @@ public class HomeActivity extends AppCompatActivity {
             int wifiState = intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE, WifiManager.WIFI_STATE_UNKNOWN);
             if (wifiState == WifiManager.WIFI_STATE_ENABLED) {
                 wifiOn(view);
-            }
-            else if (wifiState == WifiManager.WIFI_STATE_DISABLED) {
+            } else if (wifiState == WifiManager.WIFI_STATE_DISABLED) {
                 wifiOff(view);
             }
         }
@@ -66,10 +66,10 @@ public class HomeActivity extends AppCompatActivity {
         unregisterReceiver(receiver);
     }
 
-    public void wifiOn(View view){
+    public void wifiOn(View view) {
         String title = "Notifikasi";
         String message = "WiFi Menyala";
-        android.app.Notification notification = new NotificationCompat.Builder(this,onWiFi)
+        android.app.Notification notification = new NotificationCompat.Builder(this, onWiFi)
                 .setSmallIcon(R.drawable.ic_wifi_black)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
@@ -77,20 +77,20 @@ public class HomeActivity extends AppCompatActivity {
                 .setContentText(message)
                 .build();
 
-        notificationManagerCompat.notify(1,notification);
+        notificationManagerCompat.notify(1, notification);
     }
 
-    public void wifiOff(View view){
+    public void wifiOff(View view) {
         String title = "Notifikasi";
         String message = "Yah.. Wifinya Mati";
-        android.app.Notification notification = new NotificationCompat.Builder(this,offWiFi)
+        android.app.Notification notification = new NotificationCompat.Builder(this, offWiFi)
                 .setSmallIcon(R.drawable.ic_wifi_black)
                 .setPriority(NotificationCompat.PRIORITY_LOW)
                 .setContentTitle(title)
                 .setContentText(message)
                 .build();
 
-        notificationManagerCompat.notify(2,notification);
+        notificationManagerCompat.notify(2, notification);
     }
 
 

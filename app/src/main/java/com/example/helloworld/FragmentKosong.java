@@ -2,18 +2,16 @@ package com.example.helloworld;
 
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -67,7 +65,7 @@ public class FragmentKosong extends Fragment {
             public void onClick(View v) {
                 //sanity check
                 if (!noMhs.getText().toString().isEmpty() && !namaMhs.getText().toString().isEmpty() && !phoneMhs.getText().toString().isEmpty()) {
-                   tambahDataPlusChek();
+                    tambahDataPlusChek();
                 } else {
                     Toast.makeText(requireActivity(), "Semua Data Wajib Diisi",
                             Toast.LENGTH_SHORT).show();
@@ -80,7 +78,7 @@ public class FragmentKosong extends Fragment {
             public void onClick(View v) {
                 //sanity check
                 if (!noMhs.getText().toString().isEmpty() && !namaMhs.getText().toString().isEmpty() && !phoneMhs.getText().toString().isEmpty()) {
-                  checkDataDiDataBase();
+                    checkDataDiDataBase();
                 } else {
                     Toast.makeText(requireActivity(), "Semua Data Wajib Diisi",
                             Toast.LENGTH_SHORT).show();
@@ -146,7 +144,7 @@ public class FragmentKosong extends Fragment {
         });
     }
 
-    private void tambahDataPlusChek(){
+    private void tambahDataPlusChek() {
         Mahasiswa mhs = new Mahasiswa(noMhs.getText().toString(),
                 namaMhs.getText().toString(), phoneMhs.getText().toString());
         DocumentReference docRef = firebaseFirestoreDb.collection("DaftarMhs").document(String.valueOf(noMhs.getText()));
@@ -157,11 +155,11 @@ public class FragmentKosong extends Fragment {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
                         tambahMahasiswa();
-                        Toast.makeText(getActivity(),"Data Berhasil Diperbaharui",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Data Berhasil Diperbaharui", Toast.LENGTH_SHORT).show();
                         //Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
                         tambahMahasiswa();
-                        Toast.makeText(getActivity(),"Data Berhasil Ditambahkan",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Data Berhasil Ditambahkan", Toast.LENGTH_SHORT).show();
                         //Log.d(TAG, "No such document");
                     }
                 } else {
@@ -172,7 +170,8 @@ public class FragmentKosong extends Fragment {
             }
         });
     }
-    private void checkDataDiDataBase(){
+
+    private void checkDataDiDataBase() {
         Mahasiswa mhs = new Mahasiswa(noMhs.getText().toString(),
                 namaMhs.getText().toString(), phoneMhs.getText().toString());
         DocumentReference docRef = firebaseFirestoreDb.collection("DaftarMhs").document(String.valueOf(noMhs.getText()));
@@ -182,10 +181,10 @@ public class FragmentKosong extends Fragment {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        Toast.makeText(getActivity(),"Data Ditemukan di Database",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Data Ditemukan di Database", Toast.LENGTH_SHORT).show();
                         //Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
-                        Toast.makeText(getActivity(),"Data Tidak Ditemukan",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Data Tidak Ditemukan", Toast.LENGTH_SHORT).show();
                         //Log.d(TAG, "No such document");
                     }
                 } else {
@@ -196,6 +195,7 @@ public class FragmentKosong extends Fragment {
             }
         });
     }
+
     private void deleteDataMahasiswa() {
         Mahasiswa mhs = new Mahasiswa(noMhs.getText().toString(),
                 namaMhs.getText().toString(), phoneMhs.getText().toString());
@@ -220,7 +220,7 @@ public class FragmentKosong extends Fragment {
                 });
 
 
-        }
-
-
     }
+
+
+}
