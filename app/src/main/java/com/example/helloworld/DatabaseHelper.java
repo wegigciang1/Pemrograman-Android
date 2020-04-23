@@ -22,27 +22,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("drop table if exists user");
     }
+
     //insert
-    public boolean insert(String email, String username, String password){
+    public boolean insert(String email, String username, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("email",email);
+        contentValues.put("email", email);
         contentValues.put("username", username);
         contentValues.put("password", password);
         long ins = db.insert("user", null, contentValues);
         return ins != -1;
     }
+
     //Cek apakah email sudah ada atau belom
-    public Boolean checkmail(String email){
+    public Boolean checkmail(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM user WHERE email=?", new String[]{email});
         return cursor.getCount() <= 0;
     }
 
     //cek email sama pass pas login
-    public Boolean emailPass(String email, String password){
+    public Boolean emailPass(String email, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM user WHERE email=? and password=?", new String[]{email,password});
+        Cursor cursor = db.rawQuery("SELECT * FROM user WHERE email=? and password=?", new String[]{email, password});
         return cursor.getCount() > 0;
     }
 }

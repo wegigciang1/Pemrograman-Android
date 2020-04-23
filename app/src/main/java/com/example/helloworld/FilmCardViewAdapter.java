@@ -1,6 +1,5 @@
 package com.example.helloworld;
 
-import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,8 +19,9 @@ import java.util.ArrayList;
 
 public class FilmCardViewAdapter extends RecyclerView.Adapter<FilmCardViewAdapter.CardViewViewHolder> {
     private ArrayList<Film> listFilm;
+
     //constructor
-    public FilmCardViewAdapter( ArrayList<Film> list) {
+    public FilmCardViewAdapter(ArrayList<Film> list) {
         this.listFilm = list;
 
     }
@@ -56,7 +56,7 @@ public class FilmCardViewAdapter extends RecyclerView.Adapter<FilmCardViewAdapte
                 //melempar data info sekalian
 
                 gotoprofile.putExtra("foto", film.getPhoto());
-                gotoprofile.putExtra("judul",film.getName());
+                gotoprofile.putExtra("judul", film.getName());
                 gotoprofile.putExtra("sinopsis", film.getDetail());
                 //untuk lempar ke activity lain
                 v.getContext().startActivity(gotoprofile);
@@ -73,6 +73,7 @@ public class FilmCardViewAdapter extends RecyclerView.Adapter<FilmCardViewAdapte
         ImageView imgPhoto;
         TextView tvName, tvDetail;
         Button btnFavorite, btnShare;
+
         CardViewViewHolder(View itemView) {
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.img_item_photo);

@@ -2,14 +2,13 @@ package com.example.helloworld;
 
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
@@ -35,23 +34,21 @@ public class FragmentMovie extends Fragment {
     }
 
 
-
-   @Override
+    @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        list= new ArrayList<>();
+        list = new ArrayList<>();
         list.addAll(FilmsData.getListData());
 
-       RecyclerView rvFilm = view.findViewById(R.id.rv_film);
-       rvFilm.setHasFixedSize(true);
+        RecyclerView rvFilm = view.findViewById(R.id.rv_film);
+        rvFilm.setHasFixedSize(true);
 
-       FilmCardViewAdapter filmCardViewAdapter = new FilmCardViewAdapter(list);
+        FilmCardViewAdapter filmCardViewAdapter = new FilmCardViewAdapter(list);
 
-       rvFilm.setLayoutManager(new LinearLayoutManager(getActivity()));
-       rvFilm.setAdapter(filmCardViewAdapter);
-   }
-
+        rvFilm.setLayoutManager(new LinearLayoutManager(getActivity()));
+        rvFilm.setAdapter(filmCardViewAdapter);
+    }
 
 
 }
