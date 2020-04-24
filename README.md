@@ -9,7 +9,7 @@ Apa yang baru -o-
 [Penyesuaian]
 
 1. Penyesuaian kode yang bersifat menyebabkan Bug
-2. Penyesuaian beberapa typo
+2. Penyesuaian beberapa typo menjadi lebih aman
 3. Penyesuaian SectionPagerAdapter.java => Penambahan kode untuk fragment baru
 
 
