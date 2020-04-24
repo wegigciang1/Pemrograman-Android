@@ -11,10 +11,11 @@
     <string name="tab_text_1">Job Service</string>
     <string name="tab_text_2">Movie</string>
     <string name="tab_text_3">Kosong</string>
+    <string name="tab_text_4">Kamera</string>
 
     <string name="content_tab_profile">Welcome Home</string>
     <string name="content_tab_status">Change your Profile here</string>
-    <string name="content_tab_text">Comming Soon</string>
+    <string name="content_tab_text">Coming Soon</string>
     <string name="content_tab_home">Welcome Home</string>
 
     <string name="btn_login">Login</string>
@@ -23,4 +24,6 @@
     <string name="detail">Detail</string>
     <string name="favorite">Favorite</string>
     <string name="share">Sinopsis</string>
+
+    <string name="kameraBtn">Kamera</string>
 </resources>

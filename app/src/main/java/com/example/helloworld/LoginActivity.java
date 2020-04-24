@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         ImageView myimageView = findViewById(R.id.gambarLogin);
         myimageView.setImageResource(R.drawable.gambar_login);
         db = new DatabaseHelper(this);
-        buttonLogin = findViewById(R.id.btnlogin);
+        buttonLogin = findViewById(R.id.btnLogin);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         signUp = findViewById(R.id.signUpMainText);
