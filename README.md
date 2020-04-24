@@ -4,7 +4,7 @@ Apa yang baru -o-
 
 [Penambahan]
 
-Menambah Fragment Kamera - Fragment Kamera dan XML
+1. Menambah Fragment Kamera - Fragment Kamera dan XML
 
 [Penyesuaian]
 
