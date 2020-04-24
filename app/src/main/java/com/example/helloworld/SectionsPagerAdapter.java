@@ -2,6 +2,7 @@ package com.example.helloworld;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
@@ -14,7 +15,8 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     private final int[] TAB_TITLES = new int[]{
             R.string.tab_text_1,
             R.string.tab_text_2,
-            R.string.tab_text_3
+            R.string.tab_text_3,
+            R.string.tab_text_4
     };
 
     private final Context mContext;
@@ -24,7 +26,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         mContext = context;
     }
 
-    @Override
+    @NonNull
     public Fragment getItem(int position) {
         Fragment fragment = null;
         switch (position) {
@@ -36,6 +38,9 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 break;
             case 2:
                 fragment = new FragmentKosong();
+                break;
+            case 3:
+                fragment = new FragmentKamera();
                 break;
         }
         return fragment;
@@ -49,6 +54,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 }
