@@ -2,8 +2,11 @@ Android Pertemuan 9:Tugas Kelas
 
 Apa yang baru -o-
 [Penambahan]
+
 Menambah Fragment Kamera - Fragment Kamera dan XML
+
 [Penyesuaian]
+
 1. Penyesuaian kode yang bersifat menyebabkan Bug
 2. Penyesuaian beberapa typo
 3. Penyesuaian SectionPagerAdapter.java => Penambahan kode untuk fragment baru
