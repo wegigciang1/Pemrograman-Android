@@ -5,9 +5,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.Configuration;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
@@ -91,6 +93,19 @@ public class HomeActivity extends AppCompatActivity {
                 .build();
 
         notificationManagerCompat.notify(2, notification);
+    }
+
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            Toast.makeText(getApplicationContext(), "Potrait", Toast.LENGTH_SHORT).show();
+            //add your code what you want to do when screen on PORTRAIT MODE
+        } else if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            Toast.makeText(getApplicationContext(), "Lanscape", Toast.LENGTH_SHORT).show();
+            //add your code what you want to do when screen on LANDSCAPE MODE
+        }
     }
 
 
