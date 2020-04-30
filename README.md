@@ -1,16 +1,14 @@
-Android Pertemuan 9:Tugas Kelas
+Android Pertemuan 9:Tugas Mingguan
 
 Apa yang baru -o-
 
 [Penambahan]
 
-1. Menambah Fragment Kamera - Fragment Kamera dan XML
+1. Menambah Function di Home Activity - onConfigurationChanged
 
 [Penyesuaian]
 
-1. Penyesuaian kode yang bersifat menyebabkan Bug
-2. Penyesuaian beberapa typo menjadi lebih aman
-3. Penyesuaian SectionPagerAdapter.java => Penambahan kode untuk fragment baru
+-
 
 
 
@@ -19,11 +17,12 @@ Apa yang baru -o-
 
 
 
-
-
-
-
-
+//
+Android Pertemuan 9: Tugas Kelas
+Penyesuaian kode yang bersifat menyebabkan Bug
+Penyesuaian beberapa typo menjadi lebih aman
+Penyesuaian SectionPagerAdapter.java => Penambahan kode untuk fragment baru
+Menambah Fragment Kamera - Fragment Kamera dan XML
 //
 Android Pertemuan 8: Tugas M ingguan
 Penambahan Fitur Sign Up dan Login Via Firebase
