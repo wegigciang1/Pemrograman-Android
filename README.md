@@ -1,14 +1,16 @@
-Android Pertemuan 9:Tugas Mingguan
+Android Pertemuan 10:Tugas Kelas
 
 Apa yang baru -o-
 
 [Penambahan]
 
-1. Menambah Function di Home Activity - onConfigurationChanged
+1. Menambah Button di Fragment Job Service - Button Lokasi Saya
+2. Menambah Activity "LokasiActivity"
 
 [Penyesuaian]
 
--
+1. Penyesuaian Beberapa Bug Pada Fragment
+2. Penyesuaian dan Penambahan Dependency Baru
 
 
 
