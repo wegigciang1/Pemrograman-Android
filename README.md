@@ -19,6 +19,9 @@ Apa yang baru -o-
 
 
 
+ 
+
+Trash(Android Bug + Sebelum Update)
 //
 Android Pertemuan 9: Tugas Kelas
 Penyesuaian kode yang bersifat menyebabkan Bug
