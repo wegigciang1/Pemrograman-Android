@@ -43,9 +43,12 @@ public class LokasiActivity extends AppCompatActivity implements GoogleApiClient
     Location mLocation;
     TextView latLng;
     GoogleApiClient mGoogleApiClient;
+
     SupportMapFragment supportMapFragment;
     FusedLocationProviderClient client;
+
     private LocationRequest mLocationRequest;
+
     private long UPDATE_INTERVAL = 15000;  /* 15 secs */
     private long FASTEST_INTERVAL = 5000; /* 5 secs */
     private ArrayList permissionsToRequest;
@@ -74,10 +77,13 @@ public class LokasiActivity extends AppCompatActivity implements GoogleApiClient
                 .addOnConnectionFailedListener(this)
                 .build();
 
+        //
         supportMapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.google_map);
 
         client = LocationServices.getFusedLocationProviderClient(this);
+
+        //
     }
 
     private void lokasiKuSekarang() {
