@@ -67,6 +67,7 @@ public class FragmentJobService extends Fragment {
         //button Start and Canceled Job
         Button btnStartJob = view.findViewById(R.id.StartJob);
         Button btnCancelJob = view.findViewById(R.id.CancelJob);
+        Button btnLokasi = view.findViewById(R.id.LokasiSekarang);
         //button start jalankan perintah
         btnStartJob.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,8 +101,18 @@ public class FragmentJobService extends Fragment {
 
             }
         });
+
+        btnLokasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent gotoprofile = new Intent(getActivity(), LokasiActivity.class);
+                //agar tidak bisa back dengan back button
+                getActivity().finish();
+                startActivity(gotoprofile);
+            }
+        });
+
+
     }
-
-
 }
 

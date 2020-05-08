@@ -39,6 +39,17 @@
         android:text="StartJob" />
 
 
+    <Button
+        android:id="@+id/LokasiSekarang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="400dp"
+        android:backgroundTint="@color/buttonKhusus"
+        android:text="Lokasi Sekarang"
+        android:textColor="@color/textColorWhite" />
+
+
 </FrameLayout>
 
 
