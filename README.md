@@ -1,4 +1,4 @@
-Android Pertemuan 10:Tugas Kelas
+Android Pertemuan 10: Tugas Kelas
 
 Apa yang baru -o-
 
