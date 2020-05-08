@@ -24,7 +24,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_key" />
 
-        <activity android:name=".LokasiActivity"></activity>
+        <activity
+            android:name=".LokasiActivity"
+            android:parentActivityName=".HomeActivity" />
         <activity
             android:name=".SinopsisFilmActivity"
             android:label="Sinopsis"

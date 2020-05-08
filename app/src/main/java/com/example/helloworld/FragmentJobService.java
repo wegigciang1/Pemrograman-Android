@@ -106,8 +106,6 @@ public class FragmentJobService extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent gotoprofile = new Intent(getActivity(), LokasiActivity.class);
-                //agar tidak bisa back dengan back button
-                getActivity().finish();
                 startActivity(gotoprofile);
             }
         });
